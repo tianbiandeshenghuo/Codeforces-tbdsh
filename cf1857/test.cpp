@@ -8,9 +8,8 @@ void Solve(){
 }
 int main(){
   ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-  cin >> t;
-  while (t--){
-    Solve();
+  while (1){
+	 system("./spj t.in t.out t.out");
   }
   return 0;
 }
