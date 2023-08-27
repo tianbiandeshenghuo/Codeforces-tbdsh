@@ -32,7 +32,7 @@ void Solve(){
       if (a[i - 1] != a[1]){
         if (p < cnt){
           flag = 0;
-        } 
+        }
       }
       p = 1;
     }else {
