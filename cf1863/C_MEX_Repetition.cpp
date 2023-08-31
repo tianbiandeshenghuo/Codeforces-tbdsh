@@ -4,16 +4,13 @@ using namespace std;
 const int MAXN = 1e5 + 5;
 int n, m, a[MAXN];
 bool b[MAXN] = {0};
-deque<int> c;
 void Solve(){
   for (int i = 0; i <= n; i++){
     b[i] = 0;
   }
   cin >> n >> m;
-  c.clear();
   for (int i = 1; i <= n; i++){
     cin >> a[i];
-    c.push_back(a[i]);
     b[a[i]] = 1;
   }
   int mex = 0, p;
@@ -23,22 +20,10 @@ void Solve(){
       break;
     }
   }
-  int eend = (m <= n ? m : m / n + 2);
-  for (int i = 1; i <= eend; i++){
-    for (auto v : c){
-      cout << v << ' ';
-    }
-    cout << '\n';
-    cout << mex << '\n';
-    c.push_front(mex);
-    auto p = c.end();
-    p--;
-    mex = *p;
-    c.pop_back();
-
-  }
-  for (auto v : c){
-    cout << v << ' ';
+  a[n + 1] = mex;
+  m = (1ll * n * m) % (n + 1);
+  for (int i = m; i < m + n; i++){
+    cout << a[i % (n + 1) + 1] << ' ';
   }
   cout << '\n';
 }
@@ -51,6 +36,15 @@ int main(){
   }
   return 0;
 }
+
+/*
+0
+3
+1
+1
+10
+*/
+
 /*
 3 2
 0 1 3
